@@ -2,3 +2,52 @@ body {
   background-color: #fff;
 }
 
+.red {
+  color: #ff0000;
+}
+
+.black {
+  color: #000000;
+}
+
+.green {
+  color: #00ff00;
+}
+
+#header-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+#header-container h1 {
+  font-family: "Kalam", cursive;
+  font-size: 32 px;
+  font-style: italic;
+  font-weight: bold;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+}
+
+nav ul li {
+  list-style: none;
+  display: inline;
+}
+
+nav ul li a {
+  font-size: 15px;
+  color: #333;
+  text-decoration: none;
+  padding: 15px;
+  font-family: 'Oswald', sans-serif;
+}
+
+nav ul li a:hover {
+  background-color: #E50C39;
+  color: #ffffff;
+}
