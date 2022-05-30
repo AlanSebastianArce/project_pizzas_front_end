@@ -133,7 +133,13 @@ footer {
   #header-container {
     flex-direction: column;
   }
-  #header-container h1 {
-    display: none;
+  .gallery{
+    flex-direction: column;
+    margin-top: 60px;
+  }
+
+  .gallery li{
+    width: 100%;
+    justify-content: center;
   }
 }
