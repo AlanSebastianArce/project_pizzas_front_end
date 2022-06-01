@@ -120,6 +120,20 @@ nav ul li a:hover {
   color: #1a5b5e;
 }
 
+.gallery li .button {
+  margin-top: 5px;
+  width: 100%;
+  padding: 7px;
+  border: none;
+  background: #548c1d;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #fff;
+  font-family: "Work Sans", sans-serif;
+}
+
 footer {
   display: flex;
   justify-content: center;
@@ -133,12 +147,12 @@ footer {
   #header-container {
     flex-direction: column;
   }
-  .gallery{
+  .gallery {
     flex-direction: column;
     margin-top: 60px;
   }
 
-  .gallery li{
+  .gallery li {
     width: 100%;
     justify-content: center;
   }
