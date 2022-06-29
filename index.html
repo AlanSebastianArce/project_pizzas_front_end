@@ -151,20 +151,23 @@
       </ul>
     </div>
     <footer>
-      <p>&copy;2022</p>
+      <div id="link">
+        <a href="login.html">Acceso Privado</a>
+        <p>&copy;2022</p>
+      </div>
     </footer>
     <script>
       let countButtons = document.querySelectorAll("button").length;
 
       for (var i = 0; i < countButtons; i++) {
-        document.querySelectorAll("button")[i].addEventListener("click", showValue);
-
+        document
+          .querySelectorAll("button")
+          [i].addEventListener("click", showValue);
       }
 
-      function showValue(){
-          console.log(this.value);
-        }
-
+      function showValue() {
+        console.log(this.value);
+      }
     </script>
   </body>
 </html>
