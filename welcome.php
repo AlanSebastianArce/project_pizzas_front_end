@@ -25,6 +25,59 @@ echo "<br>";
 echo "Horario de conexion".$_SESSION['time'];
 echo "<br>";
 echo "<a href='logout.php'>logout</a>";
+include_once("config_products.php");
+include_once("db.php");
+$link = new Db();
+$sql = "select p.id_product, p.product_name, p.price, date_format(p.start_date, '%d/%m/%Y') as date, c.category_name from products p inner join categories c on c.id_category=p.id_category order by c.category_name asc";
+$stmt = $link->prepare($sql);
+$stmt->execute();
+$data=$stmt->fetchAll();
+
+$table="<table class='table table-bordered table-striped'> <thead class='thead-dark'> <tr> <th> Id </th> <th> Producto </th> <th> Categoria </th> <th> Precio </th> <th> Fecha de Alta </th> <th> Eliminar </th> <th> Actualizar </th> </tr> </thead> <tbody>";
+echo $table;
+
+
+  foreach($data as $row){
+?>
+<tr>
+  <td>
+    <?php
+    echo $row['id_product'];
+    ?>
+    </td>
+    <td>
+    <?php
+    echo $row['product_name'];
+    ?>
+    </td>
+    <td>
+    <?php
+    echo $row['category_name'];
+    ?>
+    </td>
+    <td>
+    <?php
+    echo $row['price'];
+    ?>
+    </td>
+    <td>
+    <?php
+    echo $row['date'];
+    ?>
+    </td>
+    
+    <td>
+      <a href="#" onclick="deleteProduct(<?php echo $row['id_product'] ?>)"> Eliminar Producto </a>
+  </td>
+
+  <td>
+      <a href="#" onclick="updateProduct(<?php echo $row['id_product'] ?>)"> Actualizar Producto </a>
+  </td>
+  </tr>
+<?php
+}
+echo "</tbody>";
+echo "</table>";
 }
 else
 {header('location:login.html');}
