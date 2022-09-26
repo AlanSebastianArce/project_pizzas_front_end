@@ -11,6 +11,16 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
     />
     
+    <script src="js/jquery-3.6.1.min.js"></script>
+    <script src="js/bootbox.min.js"></script>
+    <script> function deleteProduct(cod){
+      bootbox.confirm("Desea usted Eliminar el producto "+cod, function(result){
+        if(result){
+          window.location="delete.php?q="+cod;
+        }
+      });
+    }
+    </script>
 
     <title>Document</title>
 </head>
@@ -25,6 +35,7 @@ echo "<br>";
 echo "Horario de conexion".$_SESSION['time'];
 echo "<br>";
 echo "<a href='logout.php'>logout</a>";
+echo "<a href='insert_products.php' class='btn btn-primary'> Ingresar Producto </a>";
 include_once("config_products.php");
 include_once("db.php");
 $link = new Db();
