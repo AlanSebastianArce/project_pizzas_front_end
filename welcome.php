@@ -91,6 +91,13 @@
     }
     echo "</tbody>";
     echo "</table>";
+    $stmt=$link->query("select count(*) from products");
+    $rows = $stmt->fetchColumn();
+    /*$num_rows=count($rows);*/
+    echo "<div class='font-weigth-bold'>";
+    echo "La cantidad de productos existentes es de ".$rows;
+    echo "</div>";
+
   } else {
     header('location:login.html');
   }
@@ -107,7 +114,7 @@
   $stmt->execute();
   $dataCtg = $stmt->fetchAll();  
 
-  k
+  
   ?>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
 </body>

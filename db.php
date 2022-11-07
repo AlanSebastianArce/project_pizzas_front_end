@@ -51,7 +51,7 @@ class Db
      * @return object
      */
 
-    public function query()
+    public function query($query)
     {
         return $this->connection->query($query);
     }
